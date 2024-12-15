@@ -54,17 +54,17 @@ For Table
 -------------------------------------------------------------------------------------------------*/
 .table {
     @apply
-    w-full border border-gray-700 rounded-3xl overflow-hidden bg-white
+    w-full border border-gray-700 rounded-lg overflow-hidden bg-white shadow-lg;
 }
 
 .tableHeaderContainer {
     @apply
-    w-full
+    w-full;
 }
 
 .tableHeader {
     @apply
-    text-left bg-pastel-black text-white font-semibold p-6  border-b-2 border-[#111111]
+    text-left bg-pastel-black text-white font-semibold p-6 border-b-2 border-[#111111];
 }
 
 .tableRow {
@@ -74,7 +74,7 @@ For Table
 
 .tableData {
     @apply
-    px-6 py-2 text-[14px] text-pastel-black 
+    px-6 py-2 text-[14px] text-pastel-black;
 }
 
 

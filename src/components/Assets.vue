@@ -27,11 +27,13 @@
         </div>  
 </BaseModal>
 
-<h2 class="flex bg-[#242426] h-[65px] items-center p-5 font-semibold text-white text-lg rounded-xl">Assets</h2>
+<div class="bg-pastel-black h-12 flex flex-col justify-center px-2">
+    <h2 class="font-semibold text-white text-[16px]">Assets</h2>
+</div>
 
 <!-- Search field -->
 <div class="flex justify-end px-10">
-    <button type="button" class="flex p-2 justify-center items-center text-white border-2 border-gray-400 w-[100px] rounded-lg mt-5" @click="openAddNewAssetModal"><Icon icon='ic:round-add' class="buttonIcon"/>New</button>
+    <button type="button" class="flex p-2 justify-center items-center text-white bg-pastel-black w-[100px] rounded-lg mt-5 shadow-lg" @click="openAddNewAssetModal"><Icon icon='ic:round-add' class="buttonIcon"/>New</button>
 </div>
 
 <div class="flex justify-center mt-5 px-10">
@@ -53,9 +55,9 @@
 
 <!-- Pagination -->
 <div class="pagination-controls px-10">
-    <button type="button" class="pagination-prev-button" @click="goToPreviousPage" :disabled="currentPage === 1">Prev</button>
+    <button type="button" class="pagination-prev-button shadow-lg" @click="goToPreviousPage" :disabled="currentPage === 1">Prev</button>
     <span class="pagination-content"> {{ currentPage }} of {{ totalPages }}</span>
-    <button type="button" class="pagination-next-button" @click="goToNextPage" :disabled="currentPage === totalPages">Next</button>
+    <button type="button" class="pagination-next-button shadow-lg" @click="goToNextPage" :disabled="currentPage === totalPages">Next</button>
 </div>
 
 </template>

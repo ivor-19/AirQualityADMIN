@@ -61,20 +61,22 @@
 </BaseModal>
 
 <div class="">
-    <h2 class="flex bg-[#1d1c1a] h-[40px] items-center p-5 font-semibold text-white text-lg rounded-xl">Student List</h2>
+    <div class="bg-pastel-black h-12 flex flex-col justify-center px-2">
+        <h2 class="font-semibold text-white text-[16px]">Student List</h2>
+    </div>
 
     <!-- Add Student -->
-    <div class="searchContainer mt-8 px-10">
+    <div class="searchContainer mt-4 mx-10 "> <!-- Reduced the margin-top -->
         <BaseSearchField v-model="searchQuery" @input="search" placeholder="Search Student" class="w-[500px]"/>
         <div v-if="studentList.length !== 0" class="fileUploadContainer px-10">
             <input type="file" ref="fileInput" accept=".xlsx, .xls" @change="handleFileUpload" class="hidden" />
-            <button type="button" class="flex p-2 justify-center items-center text-white w-[200px] rounded-lg bg-pastel-black" @click="triggerFileInput">
+            <button type="button" class="flex p-2 justify-center items-center text-white w-[200px] rounded-lg bg-pastel-black shadow-lg" @click="triggerFileInput">
             <Icon icon="mdi:upload" class="buttonIcon" /> Upload Excel </button>
         </div>
-        <button v-if="studentList.length !== 0" type="button" class="flex px-4 py-2 items-center text-white w-[150px] rounded-lg bg-pastel-black" @click="openAddNewStudentModal"><Icon icon='ic:round-add' class="buttonIcon"/>New</button>
+        <button v-if="studentList.length !== 0" type="button" class="flex px-4 py-2 items-center text-white w-[150px] rounded-lg shadow-lg bg-pastel-black" @click="openAddNewStudentModal"><Icon icon='ic:round-add' class="buttonIcon"/>New</button>
     </div>
 
-    <div class="flex justify-center px-10 ">
+    <div class="flex px-10 mt-2"> <!-- Added margin-top of 2px to create a small gap -->
         <table class="table">
             <thead class="">
                 <tr class="tableHeaderContainer">
@@ -91,13 +93,13 @@
                     <td colspan="6" class="text-center text-gray-500 w-full">
                         <div class="my-10">Empty list</div>
                         <div class="flex flex-col w-full items-center justify-center gap-2">
-                            <div v-if="studentList.length === 0" class="fileUploadContainer px-10">
+                            <div v-if="studentList.length === 0" class="fileUploadContainer px-10 shadow-lg">
                                 <input type="file" ref="fileInput" accept=".xlsx, .xls" @change="handleFileUpload" class="hidden" />
                                 <button type="button" class="flex p-2 justify-center items-center text-white w-[200px] rounded-lg bg-pastel-black" @click="triggerFileInput">
                                 <Icon icon="mdi:upload" class="buttonIcon" /> Upload Excel </button>
                             </div>
                             <span>or</span>
-                            <button v-if="studentList.length === 0" type="button" class="flex px-4 py-2 justify-center items-center text-white w-[150px] rounded-lg bg-pastel-black" @click="openAddNewStudentModal"><Icon icon='ic:round-add' class="buttonIcon"/>New</button>
+                            <button v-if="studentList.length === 0" type="button" class="flex px-4 py-2 justify-center items-center text-white w-[150px] rounded-lg shadow-lg bg-pastel-black" @click="openAddNewStudentModal"><Icon icon='ic:round-add' class="buttonIcon"/>New</button>
                         </div>
                     </td> 
                 </tr>
@@ -117,12 +119,13 @@
         </table>
     </div>
     <!-- Pagination -->
-    <div v-if="studentList.length !== 0" class="pagination-controls px-10">
-        <button type="button" class="pagination-prev-button" @click="goToPreviousPage" :disabled="currentPage === 1">Prev</button>
+    <div v-if="studentList.length !== 0" class="pagination-controls px-10 ">
+        <button type="button" class="pagination-prev-button shadow-lg" @click="goToPreviousPage" :disabled="currentPage === 1">Prev</button>
         <span class="pagination-content"> {{ currentPage }} of {{ totalPages }}</span>
-        <button type="button" class="pagination-next-button" @click="goToNextPage" :disabled="currentPage === totalPages">Next</button>
+        <button type="button" class="pagination-next-button shadow-lg" @click="goToNextPage" :disabled="currentPage === totalPages">Next</button>
     </div>
 </div>
+
 </template>
 
 <script setup>

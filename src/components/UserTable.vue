@@ -23,7 +23,9 @@
 </BaseModal>
 
 <div class="">
-    <h2 class="flex bg-[#242426] h-[40px] items-center p-5 font-semibold text-white text-lg rounded-xl">Users</h2>
+    <div class="bg-pastel-black h-12 flex flex-col justify-center px-2">
+        <h2 class="font-semibold text-white text-[16px]">Users</h2>
+    </div>
 
     <!-- <div class="">
        <BaseSearchField v-model="searchQuery" @input="search" placeholder="Search control number"/>
@@ -61,7 +63,7 @@
         </table>
     </div>
     <!-- Pagination -->
-    <div v-if="userList !== 0" class="pagination-controls px-10">
+    <div v-if="userList !== 0" class="pagination-controls px-10 ">
       <button type="button" class="pagination-prev-button" @click="goToPreviousPage" :disabled="currentPage === 1">Prev</button>
       <span class="pagination-content"> {{ currentPage }} of {{ totalPages }}</span>
       <button type="button" class="pagination-next-button" @click="goToNextPage" :disabled="currentPage === totalPages">Next</button>

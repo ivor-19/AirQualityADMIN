@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
     {
+        path: '/',
+        redirect: '/UserTable', //Default page
+    },
+    {
         path: '/Assets',
         name: 'Assets',
         meta: { requiresAuth: false },
