@@ -22,6 +22,9 @@
                 </tr>
             </thead>
             <tbody>
+                <td v-if="historyList.length === 0" colspan="6" class="text-center text-gray-500 w-full">
+                    <div class="my-10">Empty list</div>
+                </td> 
                 <tr v-for="history in historyList" :key="history._id" class="tableRow">
                     <td class="tableData hidden">{{ history._id }}</td>
                     <td class="tableData">{{ history.date }}</td>

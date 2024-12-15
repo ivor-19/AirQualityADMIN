@@ -42,6 +42,9 @@
                 </tr>
             </thead>
             <tbody>
+                <td v-if="userList.length === 0" colspan="6" class="text-center text-gray-500 w-full">
+                    <div class="my-10">Empty list</div>
+                </td> 
                 <tr v-for="user in userList" :key="user._id" class="tableRow">
                     <td class="tableData hidden">{{ user._id }}</td>
                     <td class="tableData">{{ user.username }}</td>
@@ -49,7 +52,7 @@
                     <td class="tableData">{{ user.asset_model }}</td>
                     <td class="tableData">{{ user.first_access }}</td>
                     <td class="tableData">
-                      <div class="flex items-center justify-start space-x-2">
+                      <div class="flex items-center justify-start space-x-2 cursor-pointer">
                           <Icon icon="mi:delete" @click="openDeleteUserModal(user._id)" class="tableIconDelete"></Icon>
                       </div>
                   </td>
@@ -58,7 +61,7 @@
         </table>
     </div>
     <!-- Pagination -->
-    <div class="pagination-controls px-10">
+    <div v-if="userList !== 0" class="pagination-controls px-10">
       <button type="button" class="pagination-prev-button" @click="goToPreviousPage" :disabled="currentPage === 1">Prev</button>
       <span class="pagination-content"> {{ currentPage }} of {{ totalPages }}</span>
       <button type="button" class="pagination-next-button" @click="goToNextPage" :disabled="currentPage === totalPages">Next</button>
@@ -75,6 +78,7 @@ import { ref, onMounted, computed } from "vue";
 import { debounce } from 'lodash';
 import { useRouter } from 'vue-router'; 
 import { useStore } from 'vuex';
+import StudentList from './StudentList.vue';
 
 const store = useStore();
 const router = useRouter();

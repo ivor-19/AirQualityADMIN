@@ -4,14 +4,12 @@
 
 
 @layer components {
-
- 
 /*------------------------------------------------------------------------------------------------
 For global css
 -------------------------------------------------------------------------------------------------*/
 body {
     @apply 
-    text-font_color_primary 2xl:text-sm text-xs;
+    font-poppins text-font_color_primary 2xl:text-sm text-xs;
 }
 
 /* Global default font size */
@@ -56,7 +54,7 @@ For Table
 -------------------------------------------------------------------------------------------------*/
 .table {
     @apply
-    w-full border border-gray-700 rounded-3xl overflow-hidden
+    w-full border border-gray-700 rounded-3xl overflow-hidden bg-white
 }
 
 .tableHeaderContainer {
@@ -66,17 +64,17 @@ For Table
 
 .tableHeader {
     @apply
-    text-left bg-[#242426] text-white font-semibold p-6  border-b-2 border-[#111111]
+    text-left bg-pastel-black text-white font-semibold p-6  border-b-2 border-[#111111]
 }
 
 .tableRow {
     @apply
-    border-b-2 border-[#1B1B1B] bg-[#242426] hover:bg-gray-700;
+    border-b-[1px] border-gray-100 bg-[#fffff] hover:bg-gray-100;
 }
 
 .tableData {
     @apply
-    px-6 py-2 text-[14px] text-white 
+    px-6 py-2 text-[14px] text-pastel-black 
 }
 
 
@@ -140,16 +138,16 @@ For input fields components
     /* For input fields fonts */
     .inputText {
         @apply 
-        tracking-wide text-gray-200
+        tracking-wide
         2xl:text-sm text-xs
     }
 
     /* For input fields layout */
     .inputLayout { 
         @apply 
-        border-2 border-gray-400
-        bg-[#242426]
-        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+        border-2 border-gray-200
+        bg-[#fffff]
+        focus:outline-none focus:ring-1 focus:ring-blue-200 focus:border-pastel-black
         rounded-[10px] block w-full py-2 px-4
         placeholder:text-gray-400 placeholder:font-extralight placeholder:text-[13px] placeholder:tracking-wide placeholder:italic
     }

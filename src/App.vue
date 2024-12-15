@@ -2,7 +2,7 @@
 <template>
    <div class="flex">
      <Sidebar />
-     <div class="flex-1 bg-[#1B1B1D] p-4">
+     <div class="flex-1 bg-[#fafafa] p-4">
        <router-view />
      </div>
    </div>

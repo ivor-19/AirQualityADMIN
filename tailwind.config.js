@@ -7,10 +7,9 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",],
   theme: {
     extend: {
-      fontFamily:{
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-        'poppins' : ['Poppins']
-    },
+      fontFamily: {
+        poppins: ['PoppinsRegular', 'sans-serif'], // Extend with your custom font
+      },
     colors: {
         border_color_primary: '#264EB6',
         border_color_gray: '#BBBBBB',
@@ -18,6 +17,13 @@ export default {
         font_color_gray: '#535353',
         font_color_link: '#007BD4',
         font_color_error: '#A52A2A',
+        'pastel': {
+          'green' : '#d2e7d6',
+          'green-v2': '#b8d8be',
+          'black' : '#1d1c1a',
+
+          //c8e1cc - alt pastel green
+        }, 
     }
 },
 
