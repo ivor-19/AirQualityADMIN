@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+
+ 
+/*------------------------------------------------------------------------------------------------
+For global css
+-------------------------------------------------------------------------------------------------*/
+body {
+    @apply 
+    text-font_color_primary 2xl:text-sm text-xs;
+}
+
+/* Global default font size */
+.fontBodySize {
+    @apply
+    md:text-sm 2xs:text-base
+}
+
+.mainContainer {
+    @apply
+    md:px-10 2xs:px-5 sm:px-10 py-10
+}
+
+.loading {
+    @apply
+    top-0 left-0
+} 
+
+
+/*------------------------------------------------------------------------------------------------
+For toast
+-------------------------------------------------------------------------------------------------*/
+.toast {
+    @apply fixed left-0 top-16 flex items-center justify-center transform w-full z-50;
+}
+
+.innerToast {
+    @apply py-4 px-8 rounded shadow-md border-2 border-gray-400;
+}
+
+.success {
+    @apply bg-[#242426] text-gray-200;
+}
+
+.error {
+    @apply bg-[#242426] text-red-700;
+}
+   
+
+/*------------------------------------------------------------------------------------------------
+For Table
+-------------------------------------------------------------------------------------------------*/
+.table {
+    @apply
+    w-full border border-gray-700 rounded-3xl overflow-hidden
+}
+
+.tableHeaderContainer {
+    @apply
+    w-full
+}
+
+.tableHeader {
+    @apply
+    text-left bg-[#242426] text-white font-semibold p-6  border-b-2 border-[#111111]
+}
+
+.tableRow {
+    @apply
+    border-b-2 border-[#1B1B1B] bg-[#242426] hover:bg-gray-700;
+}
+
+.tableData {
+    @apply
+    px-6 py-2 text-[14px] text-white 
+}
+
+
+/*------------------------------------------------------------------------------------------------
+For modal
+-------------------------------------------------------------------------------------------------*/
+.modalHeaderContainer {
+    @apply
+    flex items-center justify-between border-b-[2px] border-gray-200 pt-5 pb-5 mb-6
+}
+
+.modalHeader {
+    @apply
+    text-gray-200 xs:text-lg 2xs:text-base font-semibold
+}
+
+.modalLabel {
+    @apply
+    text-gray-200 xs:text-lg 2xs:text-base font-semibold
+}
+
+.modalContentContainer {
+    @apply
+    max-h-[50vh] overflow-y-auto pr-4 mr-3
+}
+
+.closeModalIcon {
+    @apply
+    xs:w-7 xs:h-7 2xs:w-6 2xs:h-6 text-gray-400 hover:text-gray-500 cursor-pointer
+}
+
+.modalButtonContainer {
+    @apply
+    mt-8 flex gap-6
+}
+
+.alertIconContainer {
+    @apply
+    flex justify-center mt-6
+}
+
+.alertIcon {
+    @apply
+    w-20 h-20 text-[#D7722A]
+}
+
+.alertTextHeader {
+    @apply
+    flex justify-center mb-4 text-gray-200 font-semibold text-lg
+}
+
+.alertTextContent {
+    @apply
+    flex justify-center text-center text-gray-200 mb-5 2xl:text-sm text-xs tracking-wide
+}
+
+
+/*------------------------------------------------------------------------------------------------
+For input fields components
+-------------------------------------------------------------------------------------------------*/
+    /* For input fields fonts */
+    .inputText {
+        @apply 
+        tracking-wide text-gray-200
+        2xl:text-sm text-xs
+    }
+
+    /* For input fields layout */
+    .inputLayout { 
+        @apply 
+        border-2 border-gray-400
+        bg-[#242426]
+        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+        rounded-[10px] block w-full py-2 px-4
+        placeholder:text-gray-400 placeholder:font-extralight placeholder:text-[13px] placeholder:tracking-wide placeholder:italic
+    }
+
+    .selectInputLayout {
+        @apply 
+        border-2 border-gray-200
+        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+        rounded-[4px] block w-full py-2 px-4 cursor-pointer
+        appearance-none; /* Removes the default arrow */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); /* Custom arrow */
+        background-repeat: no-repeat;
+        background-position: right 1rem center; /* Adjust the position */
+        background-size: 1.3rem; /* Adjust arrow size */
+        padding-right: 2.5rem;
+    }
+
+    /* Remove the scrollbar if it's not needed */
+    .selectInputLayout::-webkit-scrollbar {
+        width: 0; /* Remove extra space for the scrollbar */
+        height: 0; /* Remove the height if it's a horizontal scrollbar */
+    }
+
+    .selectInputLayout::-webkit-scrollbar-thumb {
+        background: #c3c6cb; /* Custom scrollbar thumb color */
+    }
+
+    .selectInputLayout::-webkit-scrollbar-track {
+        background: #f3f4f6; /* Custom track color */
+    }
+
+    .selectFieldPlaceholder {
+        @apply
+        font-extralight text-[13px] italic text-gray-400
+    }
+
+ 
+/*------------------------------------------------------------------------------------------------
+For buttons
+-------------------------------------------------------------------------------------------------*/
+    /* Button icon */ 
+    .buttonIcon {
+        @apply
+        w-5 h-5
+    }
+
+    /* Primary button */
+    .primaryButton {
+        @apply
+        fontBodySize flex items-center justify-center gap-2 w-full tracking-wide px-6 py-2 rounded cursor-pointer whitespace-nowrap border-gray-200 text-white shadow-md 
+        bg-gradient-to-t from-[#D7722A] to-[#F99750] 
+        hover:bg-gradient-to-t hover:from-[#D7722A] hover:to-[#B54E04] 
+    }
+
+     /* Cancel button */
+     .cancelButton {
+        @apply
+        flex items-center justify-center gap-2 w-full bg-gray-300 hover:bg-gray-500 text-gray-700 hover:text-white fontBodySize font-normal tracking-wide px-4 py-2 rounded cursor-pointer whitespace-nowrap
+    }
+   
+
+/*------------------------------------------------------------------------------------------------
+For pagination controls
+-------------------------------------------------------------------------------------------------*/
+.pagination-controls {
+    @apply mt-6 flex justify-end text-sm
+}
+
+.pagination-prev-button {
+    @apply py-2 px-8 bg-[#242426] rounded-tl-lg rounded-bl-lg  hover:bg-gray-500 text-gray-200
+}
+
+.pagination-next-button {
+    @apply py-2 px-8 bg-[#242426] rounded-tr-lg rounded-br-lg hover:bg-gray-500 text-gray-200
+}
+
+.pagination-content {
+    @apply py-2 px-8 bg-[#242426] flex items-center border-r border-l border-gray-300 text-gray-200
+}
+
+/*------------------------------------------------------------------------------------------------
+For SearchField
+-------------------------------------------------------------------------------------------------*/
+.searchField {
+    @apply
+    w-[600px]  md:w-[500px] sm:w-[400px] xs:w-[300px] 2xs:w-[220px]
+}
+
+/*------------------------------------------------------------------------------------------------
+For searchbar container and button
+-------------------------------------------------------------------------------------------------*/
+.searchContainer {
+    @apply
+    flex items-center justify-between mb-8 space-x-4
+}
+
+}
